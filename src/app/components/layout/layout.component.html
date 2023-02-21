@@ -1,0 +1,22 @@
+<button (click)="logOutUser()">
+  logout
+</button>
+
+
+<div class="l-navbar show-nav" id="nav-bar">
+    <nav class="nav">
+        <div>
+            <ul class="app-menu">
+                <li>
+                    <a class="nav_link" [routerLink]="['']" [routerLinkActive]="['active']">
+                        <i class="svgMenuIconSize svgDashboardIcon svgMenuActiveIcon"></i>
+                        <span class="nav_name">dashboard</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<router-outlet></router-outlet>
