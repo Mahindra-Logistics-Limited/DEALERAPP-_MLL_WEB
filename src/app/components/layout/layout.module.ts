@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import {LayoutComponent} from "./layout.component";
+import {SearchFilterPipe} from "../../customDirectives/search-filter.pipe";
 
 
 @NgModule({
   declarations: [
     LayoutComponent,
+    SearchFilterPipe,
   ],
   imports: [
     CommonModule,
-    LayoutRoutingModule
-  ]
+    LayoutRoutingModule,
+  ],
+  exports: [
+    SearchFilterPipe
+  ],
 })
 export class LayoutModule { }

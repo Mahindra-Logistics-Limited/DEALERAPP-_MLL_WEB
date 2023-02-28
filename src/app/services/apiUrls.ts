@@ -8,10 +8,17 @@ import {Injectable} from "@angular/core";
 
 export class ApiUrls {
 
-    mainUrl= 'http://mpoddmob.devmll.com/';
+    mainUrl= 'http://mpoddmobuat.devmll.com/';
 
 
     authenticateUsers = 'api/login/authenticateUsers';
+
+
+    // Consignment List
+
+    getAllConsignmentTestList= 'api/consignment/getAllConsignmentTest'
+    getConsignmentStatus= 'api/consignment/getConsignmentStatus'
+    allConsignmentNotifications= 'api/consignment/getAllConsignmentNotification'
 
 
 }

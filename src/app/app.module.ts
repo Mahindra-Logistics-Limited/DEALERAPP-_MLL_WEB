@@ -7,7 +7,6 @@ import { LoginComponent } from './components/login/login.component';
 import {SharedModule} from "./shared/shared.module";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {JwtInterceptor} from "./interceptors/jwt.interceptor";
-import { LayoutComponent } from './components/layout/layout.component';
 
 // @ts-ignore
 @NgModule({
