@@ -1,14 +1,26 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {ApiUrls} from "./apiUrls";
 import {map} from "rxjs";
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
-  constructor(private _httpClient: HttpClient, public _apiUrls: ApiUrls) { }
+  constructor(private _httpClient: HttpClient, public _apiUrls: ApiUrls, public authService: AuthService) { }
+  currentUser = this.authService.currentUserValue;
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'accessToken': `${this.currentUser.accessToken}`
+  //   })
+  // }
+
+  httpOptions = {
+    // headers: new HttpHeaders().set('accessToken', this.currentUser.accessToken)
+  }
 
 
   getUserRoleValue(key: any): string {

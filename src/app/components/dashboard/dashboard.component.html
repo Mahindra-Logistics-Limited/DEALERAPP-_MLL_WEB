@@ -1,0 +1,23 @@
+<div style="margin-left: 178px;display: flex" xmlns="http://www.w3.org/1999/html">
+    <div>
+        <b>Dashboard</b>
+    </div>
+   <div style="margin-left: 20px">
+       <button (click)="changeTab(1)">
+           Consignment/ Order Status</button>
+       <button (click)="changeTab(2)">
+           My Consignment/ Order History
+       </button>
+   </div>
+   <div>
+       <input placeholder="Search by VIN / Serial No. / Invoice No."  style="margin-left: 513%" [(ngModel)]="orderStatus">
+   </div>
+</div>
+<div>
+    <div *ngIf="consignmentOrderStatusComponent">
+        <app-consignment-order-status [tab]="tab" [orderStatus]="orderStatus" ></app-consignment-order-status>
+    </div>
+    <div *ngIf="consignmentOrderHistoryComponent">
+        <app-consignment-order-history [tab]="tab" [orderStatus]="orderStatus"></app-consignment-order-history>
+    </div>
+</div>

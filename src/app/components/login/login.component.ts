@@ -15,8 +15,8 @@ import {map, share, Subscription, timer} from 'rxjs';
 export class LoginComponent implements OnInit {
 
   public loginDetails: any = {
-    username: '',
-    password: ''
+    username: 'admin',
+    password: 'Mpoddpro@2022'
   }
   public returnUrl = '';
   subscription: Subscription | undefined;
