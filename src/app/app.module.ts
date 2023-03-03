@@ -13,6 +13,7 @@ import { ConsignmentOrderHistoryComponent } from './components/dashboard/consign
 import { LayoutComponent } from './components/layout/layout.component';
 import {SearchFilterPipe} from "./customDirectives/search-filter.pipe";
 import { PendingEpodComponent } from './components/pending-epod/pending-epod.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 // @ts-ignore
 @NgModule({
@@ -24,7 +25,8 @@ import { PendingEpodComponent } from './components/pending-epod/pending-epod.com
     ConsignmentOrderHistoryComponent,
     LayoutComponent,
     SearchFilterPipe,
-    PendingEpodComponent
+    PendingEpodComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

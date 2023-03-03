@@ -11,14 +11,15 @@ import {PendingEpodComponent} from "./components/pending-epod/pending-epod.compo
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent,
+    path: '',
     canActivate: [AuthGuard],
     data: {expectedRole:[1,10,20]},
+    component: LayoutComponent,
     children: [
-      {
-        path: '',
-        component: DashboardComponent
-      },
+      // {
+      //   path: '',
+      //   component: DashboardComponent
+      // },
       {
         path: 'dashboard',
         component: DashboardComponent
@@ -26,12 +27,12 @@ const routes: Routes = [
       {
         path: 'pendingEPOD',
         component: PendingEpodComponent
-      }
-      // {path: '', redirectTo: 'orderStatus', pathMatch: 'full'},
+      },
+      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     ]
   },
   {path: 'login', component: LoginComponent},
-  // {path: '**', redirectTo: ''}
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
