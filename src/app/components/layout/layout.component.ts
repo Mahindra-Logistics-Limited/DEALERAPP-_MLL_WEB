@@ -8,16 +8,21 @@ import {Router} from "@angular/router";
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-
-  constructor(public authService: AuthService,
-              private router: Router,) { }
+  public currentUser: any = {};
+  constructor(private authService : AuthService,
+              private router: Router,) {
+    this.authService.currentUser.subscribe(x => {
+      this.currentUser = x;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-    logOutUser() {
-      this.authService.logOut();
-      window.location.reload();
-      this.router.navigate(['/login']);
-    }
+  logOutUser(): void {
+    this.authService.logOut();
+    window.location.reload();
+    this.router.navigate(['/login']);
+  }
+
 }

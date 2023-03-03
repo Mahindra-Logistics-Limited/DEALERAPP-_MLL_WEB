@@ -1,21 +1,17 @@
-<button (click)="logOutUser()" style="margin-left: 90%">
-  logout
-</button>
-
-<div class="l-navbar show-nav" id="nav-bar">
-    <nav class="nav">
-        <div>
-            <ul class="app-menu">
-                <li>
-                    <a class="nav_link" [routerLink]="['dashboard']" [routerLinkActive]="['active']">
-                        <i class="svgMenuIconSize svgDashboardIcon svgMenuActiveIcon"></i>
-                        <span class="nav_name">dashboard</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </nav>
+<div *ngIf="currentUser">
+    <div style="margin-left: 95%">
+        <button (click)="logOutUser()">logOut</button>
+    </div>
+    <li class="waves-effect waves-light">
+        <a class="treeview-item" [routerLink]="['dashboard']" [routerLinkActive]="['active']">
+            <i class="icon fa fa-clipboard" aria-hidden="true"></i>dashboard
+        </a>
+    </li>
+    <li class="waves-effect waves-light">
+        <a class="treeview-item" [routerLink]="['pendingEPOD']" [routerLinkActive]="['active']">
+            <i class="icon fa fa-clipboard" aria-hidden="true"></i>Pending Epod
+        </a>
+    </li>
+<!--    <input placeholder="Search by VIN / Serial No. / Invoice No." >-->
 </div>
-
 <router-outlet></router-outlet>

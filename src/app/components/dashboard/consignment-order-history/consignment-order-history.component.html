@@ -1,0 +1,9 @@
+<div style="margin-left: 178px">
+    <div style="float: left; width: 25%; padding: 0 10px;margin-top: 50px" *ngFor="let orderHistory of orderHistoryList | searchFilter: orderStatus">
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 16px;text-align: center;background-color: #f1f1f1;">
+            <b>VIN No</b>
+            <p>{{orderHistory.VINNo}}</p>
+            <p style="background-color: #28C840">{{orderHistory.state}}</p>
+        </div>
+    </div>
+</div>

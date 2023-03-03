@@ -7,7 +7,9 @@ import {AuthService} from "./auth.service";
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+
   constructor(private router: Router, private authService: AuthService) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): any {
@@ -22,14 +24,6 @@ export class AuthGuard implements CanActivate {
       }
       if (this.authService.isAuthenticated() && currentAccessToken.USER_ID === expectedRole) {
         return true;
-      }
-      else {
-        // if (currentAccessToken.id === '6308b1c052a0f85de09c330e') {
-        //   return true;
-        // } else {
-          this.router.navigate(['/login'], {queryParams: { returnUrl: state.url }});
-          return false;
-        // }
       }
     } else {
       this.router.navigate(['/login'], {queryParams: { returnUrl: state.url },});

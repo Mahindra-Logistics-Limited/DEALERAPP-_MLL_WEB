@@ -1,0 +1,36 @@
+<div style="margin-left: 178px">
+    <div style="float: left; width: 25%; padding: 0 10px;margin-top: 50px" *ngFor="let orderStatus of orderStatusList | searchFilter : orderStatus" [hidden]="orderDetails">
+        <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding: 16px;text-align: center;background-color: #f1f1f1;">
+            <b>VIN No</b>
+            <p>{{orderStatus.VINNo}}</p>
+            <p style="background-color: #f5c0505e; color: #D89F28;font-weight: bold;" (click)="orderViewDetailes(orderStatus)">{{orderStatus.state}}</p>
+            <b>Source</b>
+            <p>{{orderStatus.Source}}</p>
+            <b>Destination</b>
+            <p>{{orderStatus.Destination}}</p>
+        </div>
+    </div>
+
+    <div *ngIf="orderDetails">
+        <table style="border-collapse: collapse;border-spacing: 0;width: 100%;border: 1px solid #ddd; margin-top: 50px">
+            <thead>
+              <tr style="text-align: left;padding: 16px;">
+                  <th>VIN No</th>
+                  <th>Source</th>
+                  <th>Destination</th>
+                  <th>State</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="text-align: left;padding: 16px;">
+                  <td>{{oneorderDetailList.VINNo}}</td>
+                  <td>{{oneorderDetailList.Source}}</td>
+                  <td>{{oneorderDetailList.Destination}}</td>
+                  <td>{{oneorderDetailList.state}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

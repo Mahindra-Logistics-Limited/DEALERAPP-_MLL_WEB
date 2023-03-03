@@ -9,6 +9,7 @@ import {Injectable} from "@angular/core";
 export class ApiUrls {
 
     mainUrl= 'http://mpoddmobuat.devmll.com/';
+    // mainUrl = 'http://localhost:3000/';
 
 
     authenticateUsers = 'api/login/authenticateUsers';

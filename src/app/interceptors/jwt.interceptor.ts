@@ -16,12 +16,9 @@ export class JwtInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let currentUser = this.authService.currentUserValue;
     if (currentUser && currentUser.data) {
-      console.log(currentUser, currentUser.data.accessToken, '==============')
       request = request.clone({
         setHeaders: {
-
           // 'Content-Type': 'application/formData',
-          // 'test': `${currentUser.accessToken}`,
           'accessToken': `${currentUser.data.accessToken}`,
           'devicetype': 'web'
         }
@@ -30,7 +27,6 @@ export class JwtInterceptor implements HttpInterceptor {
         // },
       });
     }
-    console.log(request)
     return next.handle(request);
   }
 }
