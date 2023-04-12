@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "f7433508-c32d-4f02-a441-257879de14b2"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "DEALERAPP-MLL-WEB": {
+    "MASTER-TEM": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/DEALERAPP-MLL-WEB",
+            "outputPath": "dist/MASTER-TEM",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -40,13 +43,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ],
               "fileReplacements": [
@@ -72,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DEALERAPP-MLL-WEB:build:production"
+              "browserTarget": "MASTER-TEM:build:production"
             },
             "development": {
-              "browserTarget": "DEALERAPP-MLL-WEB:build:development"
+              "browserTarget": "MASTER-TEM:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DEALERAPP-MLL-WEB:build"
+            "browserTarget": "MASTER-TEM:build"
           }
         },
         "test": {
@@ -107,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "DEALERAPP-MLL-WEB"
+  "defaultProject": "MASTER-TEM"
 }

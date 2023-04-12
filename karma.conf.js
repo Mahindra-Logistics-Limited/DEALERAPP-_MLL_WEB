@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/DEALERAPP-MLL-WEB'),
+      dir: require('path').join(__dirname, './coverage/MASTER-TEM'),
       subdir: '.',
       reporters: [
         { type: 'html' },
