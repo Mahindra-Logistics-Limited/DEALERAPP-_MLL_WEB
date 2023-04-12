@@ -1,29 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import {SharedModule} from "./shared/shared.module";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {JwtInterceptor} from "./interceptors/jwt.interceptor";
-import { LayoutComponent } from './components/layout/layout.component';
+import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
+import { BackendLayoutComponent } from './layouts/backend-layout/backend-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// @ts-ignore
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    DefaultLayoutComponent,
+    BackendLayoutComponent
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
-    HttpClientModule,
-    SharedModule
+    BrowserAnimationsModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

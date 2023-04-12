@@ -1,0 +1,633 @@
+<div class="dashboard_wrop">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row">
+            <div class="text-50 discrip_wrip">
+                <div class="discrip_titl">Uploaded </div>
+                <div class="duscript_sub">Planner
+                    <!-- <span>ORDER PROCESS</span> -->
+                </div>
+            </div>
+            <div class="cust_input_toggle_group" style="margin-left: 10px;">
+                <mat-button-toggle-group #group="matButtonToggleGroup" [value]="selectedVal"
+                    (change)="onValChange(group.value)">
+                    <mat-button-toggle value="option1">
+                        Convoy
+                    </mat-button-toggle>
+                    <mat-button-toggle value="option2">
+                        Carrier 
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <div>
+
+            </div>
+            <div class="cust_input_datepick">
+                <mat-form-field appearance="fill">
+                    <mat-label>Start date - End date</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate placeholder="Start date">
+                        <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>       -->
+                    <mat-datepicker-toggle [disableRipple]="true" matSuffix [for]="picker">
+                        <div matDatepickerToggleIcon><img src="../../../assets/images/calendar_icon.png" width="20px">
+                        </div>
+                    </mat-datepicker-toggle>
+
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+
+            <div class="search_table" style="margin-left: 10px">
+                <input placeholder="Search" type="search">
+            </div>
+
+            <div class="exporting_icon">
+                <img src="../../../assets/images/import_ex_icon.svg" />
+            </div>
+        </div>
+    </div>
+    <div class="asp_view_data" fxLayout="column" fxLayoutAlign="space-between top">
+        <div fxLayout="row" fxLayoutAlign="start center" class="select_vins">
+            <div>Selected Vin’s</div>
+            <div class="vins_lable">
+                <p></p>2345FGHJ56GH <span><img src="../../../assets/images/cross_icon.png" width="10px"></span>
+            </div>
+            <div class="vins_lable">
+                <p></p>2345FGHJ56GH <span><img src="../../../assets/images/cross_icon.png" width="10px"></span>
+            </div>
+            <div class="vins_lable">
+                <p></p>2345FGHJ56GH <span><img src="../../../assets/images/cross_icon.png" width="10px"></span>
+            </div>
+            <div class="vins_lable">
+                <p></p>2345FGHJ56GH <span><img src="../../../assets/images/cross_icon.png" width="10px"></span>
+            </div>
+            <div class="vins_lable">
+                <p></p>2345FGHJ56GH <span><img src="../../../assets/images/cross_icon.png" width="10px"></span>
+            </div>
+            <div class="vins_lable">
+                <p></p>2345FGHJ56GH <span><img src="../../../assets/images/cross_icon.png" width="10px"></span>
+            </div>
+
+        </div>
+
+        <!-- <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" class="total_count_vin">
+            <div class="total_count_vin_card active_card">
+                <div class="down_icon ">
+                    <img src="../../../assets/images/download.png">
+                </div>
+                <div class="vin_count">
+                    <h2>22345</h2>
+                    <p>Delayed <Br>
+                        SAP</p>
+                </div>
+            </div>
+            <div class="total_count_vin_card">
+                <div class="down_icon ">
+                    <img src="../../../assets/images/download.png">
+                </div>
+                <div class="vin_count">
+                    <h2>22345</h2>
+                    <p>Delayed <Br>
+                        SAP</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="view_count" fxLayout="row" fxLayoutAlign="space-between center">
+<div fxLayout="row" fxLayoutAlign="start center" class="back_sap">
+<span><img src="../../../assets/images/Icon awesome-arrow-left@3x.png"></span>
+<p>VIN’s details from Shipment ID: 45678FGHJ78</p>
+</div> 
+<div fxLayout="row" class="sap_filter">
+    <div class="filter_box active_box">
+        <p>Today’s</p>
+        <span>21</span>
+    </div>
+    <div class="filter_box">
+        <p>All SAP</p>
+        <span>21</span>
+    </div>
+    <div class="filter_box">
+        <p>Delayed SAP</p>
+        <span>21</span>
+    </div>
+</div>
+        </div>
+<div fxLayout="row"  fxLayoutAlign="space-between center" class="view_error_cord">
+ <span>Note: User can drag and drop the VIN’s to move from one trailer to another. Also user can change the suggested trailer and driver. </span>  
+ <p><img src="../../../assets/images/cross_icon.png"> </p>
+</div>
+        <div fxLayout="row wrap"  fxflexfill class="view_cards_warp">
+            <div fxLayout="row" fxLayoutAlign=" stretch" class="view_cards_box view_cards_box_planer">
+                <div class="cards_in_worp">
+                    <div fxLayout="row"  fxLayoutAlign="space-between" class="card_con_wrp ">
+                        <div fxLayout="row"  class="card_item">
+                            <!-- <div class="card_icon"><img src="../../../assets/images/vin1.png"></div> -->
+                            <div class="card_text">
+                                <p>Standered Trailer</p>
+                                <h3 class="upper_cs">Mh 01 cg 2738</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="end center"   class="card_item">
+                           
+                            <div class="card_text">
+                                <b class="upper_cs min_with">Change</b>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            
+                            <div class="card_text">
+                                <p>Allocated Driver </p>
+                                <h3>Rama jor</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                           
+                            <div class="card_text">
+                                <p>Driver no.</p>
+                                <h3>95678 67897</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <div class="vin_icon">
+                                <img src="../../../assets/images/vihical.JPG">
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>upper  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>Lower  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="card_footer" style="margin-top: -10px;
+                    background-color: #fff;
+                    padding: 5px;">
+                      
+                    </div>
+                </div>
+             </div>
+             <div fxLayout="row" fxLayoutAlign=" stretch" class="view_cards_box view_cards_box_planer">
+                <div class="cards_in_worp">
+                    <div fxLayout="row"  fxLayoutAlign="space-between" class="card_con_wrp ">
+                        <div fxLayout="row"  class="card_item">
+                            <!-- <div class="card_icon"><img src="../../../assets/images/vin1.png"></div> -->
+                            <div class="card_text">
+                                <p>Standered Trailer</p>
+                                <h3 class="upper_cs">Mh 01 cg 2738</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="end center"   class="card_item">
+                           
+                            <div class="card_text">
+                                <b class="upper_cs min_with">Change</b>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            
+                            <div class="card_text">
+                                <p>Allocated Driver </p>
+                                <h3>Rama jor</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                           
+                            <div class="card_text">
+                                <p>Driver no.</p>
+                                <h3>95678 67897</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <div class="vin_icon">
+                                <img src="../../../assets/images/vihical.JPG">
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>upper  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>Lower  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="card_footer" style="margin-top: -10px;
+                    background-color: #fff;
+                    padding: 5px;">
+                      
+                    </div>
+                </div>
+             </div>
+             <div fxLayout="row" fxLayoutAlign=" stretch" class="view_cards_box view_cards_box_planer">
+                <div class="cards_in_worp">
+                    <div fxLayout="row"  fxLayoutAlign="space-between" class="card_con_wrp ">
+                        <div fxLayout="row"  class="card_item">
+                            <!-- <div class="card_icon"><img src="../../../assets/images/vin1.png"></div> -->
+                            <div class="card_text">
+                                <p>Standered Trailer</p>
+                                <h3 class="upper_cs">Mh 01 cg 2738</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="end center"   class="card_item">
+                           
+                            <div class="card_text">
+                                <b class="upper_cs min_with">Change</b>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            
+                            <div class="card_text">
+                                <p>Allocated Driver </p>
+                                <h3>Rama jor</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                           
+                            <div class="card_text">
+                                <p>Driver no.</p>
+                                <h3>95678 67897</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <div class="vin_icon">
+                                <img src="../../../assets/images/vihical.JPG">
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>upper  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>Lower  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="card_footer" style="margin-top: -10px;
+                    background-color: #fff;
+                    padding: 5px;">
+                      
+                    </div>
+                </div>
+             </div>
+             <div fxLayout="row" fxLayoutAlign=" stretch" class="view_cards_box view_cards_box_planer">
+                <div class="cards_in_worp">
+                    <div fxLayout="row"  fxLayoutAlign="space-between" class="card_con_wrp ">
+                        <div fxLayout="row"  class="card_item">
+                            <!-- <div class="card_icon"><img src="../../../assets/images/vin1.png"></div> -->
+                            <div class="card_text">
+                                <p>Standered Trailer</p>
+                                <h3 class="upper_cs">Mh 01 cg 2738</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="end center"   class="card_item">
+                           
+                            <div class="card_text">
+                                <b class="upper_cs min_with">Change</b>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            
+                            <div class="card_text">
+                                <p>Allocated Driver </p>
+                                <h3>Rama jor</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                           
+                            <div class="card_text">
+                                <p>Driver no.</p>
+                                <h3>95678 67897</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <div class="vin_icon">
+                                <img src="../../../assets/images/vihical.JPG">
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>upper  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <section>Lower  deck</section>
+                            </div>
+                            </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin1.png"></div>
+                            <div class="card_text">
+                                <h3>Vin no: GHB678GHJ</h3>
+                                <p>Location </p>  
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                            <div class="card_icon"><img src="../../../assets/images/vin3.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="card_footer" style="margin-top: -10px;
+                    background-color: #fff;
+                    padding: 5px;">
+                      
+                    </div>
+                </div>
+             </div>
+            
+            
+        </div>
+
+        <div fxLayout="row"  fxLayoutAlign="space-between center "  class="view_action_worp bg-500">
+            <h3>Allocate Planner <span>(allocating  30 VIN’s on 16th May 2022)</span> </h3>  
+            <div fxLayout="row"  fxLayoutAlign="space-between center">
+                <div class="cust_input" style="margin-left: 10px">
+                    <button mat-flat-button color="primary">Save in draft</button>
+                </div>
+                <div class="cust_input" style="margin-left: 10px">
+                    <button mat-flat-button  class="bg-100">Allocate</button>
+                </div>
+            </div>
+           </div>
+    </div>
+</div>

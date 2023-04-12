@@ -1,24 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./components/login/login.component";
-import {AuthGuard} from "./services/auth.guard";
+import { BackendLayoutComponent } from './layouts/backend-layout/backend-layout.component';
+import { BACKEND_LAYOUT } from './routes/backend-layout-routes';
+import { DefaultLayoutComponent } from './layouts/default-layout/default-layout.component';
+import { DEFAULT_ROUTES } from './routes/default-layout-routes';
 
 const routes: Routes = [
-  {
-    path: '',
-    canActivate: [AuthGuard],
-    data: {expectedRole:[10, 20, 1]},
-    loadChildren: () =>
-        import('./components/layout/layout.module').then(m => m.LayoutModule),
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
+  { path: '', component: DefaultLayoutComponent, children: DEFAULT_ROUTES },
+  { path: 'backend', component: BackendLayoutComponent, children: BACKEND_LAYOUT },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
