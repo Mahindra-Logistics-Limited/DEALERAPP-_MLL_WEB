@@ -9,6 +9,7 @@ import { BackendFooterComponent } from './backend-footer/backend-footer.componen
 import { SideNavComponent } from './side-nav/side-nav.component';
 import {MatSelectModule} from '@angular/material/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -19,7 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FooterComponent,
     BackendHeaderComponent,
     BackendFooterComponent,
-    SideNavComponent
+    SideNavComponent,
+    NotificationComponent
   ],
   exports: [
     HeaderComponent,
@@ -27,6 +29,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule,
     BackendHeaderComponent,
     BackendFooterComponent,
+    NotificationComponent,
     SideNavComponent
   ],
   imports: [
