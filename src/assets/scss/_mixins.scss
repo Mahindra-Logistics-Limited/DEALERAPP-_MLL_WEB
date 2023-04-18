@@ -135,6 +135,12 @@
 @mixin font-size($sizeValue: 0.75) {
   font-size: $sizeValue + rem;
 }
+
+@mixin smoothTrans {
+  -webkit-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
 /*@mixin e*/
 
 //start

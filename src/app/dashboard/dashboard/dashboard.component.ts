@@ -32,10 +32,14 @@ export class DashboardComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  
+  public selectedVal: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.selectedVal ='option2';
+  }
+  public onValChange(val: string) {
+    this.selectedVal = val;
   }
 
 }

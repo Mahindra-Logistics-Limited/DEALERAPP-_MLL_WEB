@@ -1,45 +1,68 @@
 <div class="logo_wrp">
     <img src="../../../assets/images/new_logo.png">
 </div>
-<div class="select_wharhouse_con">
-    <div class="sele_wh_titles text-900">Select Warehouse</div>
-    <div class="select_wh_drop ">
-        <div class="cust_input seelct_wh_cus_drop">
-            <mat-form-field appearance="fill">
-                <mat-label> Warehouse</mat-label>
-                <mat-select disableOptionCentering >
-                  <mat-option>None</mat-option>
-                  <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-        </div>
-        
-    </div>
 
-</div>
-<div id="sidebar" class="sidebar">
-    <div class="sidebar-content">
-        <div class="sidebar-menu">
-            <ul>
-              <li *ngFor="let menu of menus" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
-                <!-- <span *ngIf="menu.type === 'header'">{{menu.title}}</span> -->
-                <a class="text-900" *ngIf="menu.type !== 'header'" href="javascript:void(0)" (click)='toggle(menu)'>
-                  <i class="{{menu.icon}}"></i>
-                  <span>{{menu.title}}</span>
-                  <!-- <span *ngIf="menu.badge" class="badge badge-pill" [ngClass]="menu.badge.class">{{menu.badge.text}}</span> -->
-                </a>
-                <div *ngIf="menu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getState(menu)">
-                  <ul>
-                    <li  *ngFor="let submenu of menu.submenus">
-                      <a class="text-900" href="javascript:void(0)"> {{submenu.title}}
-                        <!-- <span *ngIf="submenu.badge" class="badge badge-pill" [ngClass]="submenu.badge.class">{{submenu.badge.text}}</span> -->
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-    </div>
+
+<nav id="sidebar" >
+  <span class="divider"></span>
+  <ul class="navigation">
+    <li class="menu_head">
+      <a href="#" *ngIf="side_triger">HOME</a>
+    </li>
+    <li>
+      <a href="#" tooltip="Dashboard" class="active"
+        ><i
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" id="Dashboard_Bold" data-name="Dashboard Bold" width="24" height="24" viewBox="0 0 24 24">
+            <g id="element-4" transform="translate(-684 -252)">
+              <path id="Vector" d="M8.5,8.9V2.1C8.5.6,7.86,0,6.27,0H2.23C.64,0,0,.6,0,2.1V8.9C0,10.4.64,11,2.23,11H6.27C7.86,11,8.5,10.4,8.5,8.9Z" transform="translate(697 254)" fill="#767676" opacity="0.5"/>
+              <path id="Vector-2" data-name="Vector" d="M8.5,2.1V8.9c0,1.5-.64,2.1-2.23,2.1H2.23C.64,11,0,10.4,0,8.9V2.1C0,.6.64,0,2.23,0H6.27C7.86,0,8.5.6,8.5,2.1Z" transform="translate(686.5 263)" fill="#767676"/>
+              <path id="Vector-3" data-name="Vector" d="M0,0H24V24H0Z" transform="translate(708 276) rotate(180)" fill="none" opacity="0"/>
+              <path id="Vector-4" data-name="Vector" d="M8.5,4.9V2.1C8.5.6,7.86,0,6.27,0H2.23C.64,0,0,.6,0,2.1V4.9C0,6.4.64,7,2.23,7H6.27C7.86,7,8.5,6.4,8.5,4.9Z" transform="translate(697 267)" fill="#767676"/>
+              <path id="Vector-5" data-name="Vector" d="M8.5,4.9V2.1C8.5.6,7.86,0,6.27,0H2.23C.64,0,0,.6,0,2.1V4.9C0,6.4.64,7,2.23,7H6.27C7.86,7,8.5,6.4,8.5,4.9Z" transform="translate(686.5 254)" fill="#767676"/>
+            </g>
+          </svg>
+            </i
+        ><span *ngIf="side_triger">Dashboard</span></a
+      >
+    </li>
+    <li>
+      <a href="#" tooltip="Rules" 
+        ><i
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" id="Strategy_Bold" data-name="Strategy Bold" width="24" height="24" viewBox="0 0 24 24">
+            <g id="status-up" transform="translate(-236 -252)">
+              <path id="Vector" d="M14.19,0H5.81C2.17,0,0,2.17,0,5.81v8.37C0,17.83,2.17,20,5.81,20h8.37c3.64,0,5.81-2.17,5.81-5.81V5.81C20,2.17,17.83,0,14.19,0ZM5.63,16.15a.75.75,0,0,1-1.5,0V14.08a.75.75,0,1,1,1.5,0Zm5.12,0a.75.75,0,0,1-1.5,0V12a.75.75,0,0,1,1.5,0Zm5.12,0a.75.75,0,0,1-1.5,0V9.93a.75.75,0,0,1,1.5,0Zm0-9.38a.75.75,0,0,1-1.5,0V5.8a19.532,19.532,0,0,1-9.31,5.36.554.554,0,0,1-.18.02.757.757,0,0,1-.73-.57A.748.748,0,0,1,4.7,9.7a18.071,18.071,0,0,0,8.75-5.11H12.2a.75.75,0,0,1,0-1.5h2.93c.04,0,.07.02.11.02a.8.8,0,0,1,.15.03,1,1,0,0,1,.14.08c.03.02.06.03.09.05.01.01.01.02.02.02a1.059,1.059,0,0,1,.1.12.338.338,0,0,1,.07.11.5.5,0,0,1,.03.13.758.758,0,0,1,.03.16c0,.01.01.02.01.03V6.77Z" transform="translate(238 254)" fill="#767676"/>
+              <path id="Vector-2" data-name="Vector" d="M0,0H24V24H0Z" transform="translate(260 276) rotate(180)" fill="none" opacity="0"/>
+            </g>
+          </svg>
+            </i
+        ><span *ngIf="side_triger">Pending EPOD</span></a
+      >
+    </li>
+    <li>
+      <a href="#" tooltip="Rules" 
+        ><i
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g id="vuesax_bulk_box" data-name="vuesax/bulk/box" transform="translate(-556 -188)">
+              <g id="box">
+                <path id="Vector" d="M0,0H24V24H0Z" transform="translate(556 188)" fill="none" opacity="0"/>
+                <path id="Vector-2" data-name="Vector" d="M16.2,4.94a1.452,1.452,0,0,1-.75,1.28l-1.74.94-1.48.79L9.16,9.61a2.216,2.216,0,0,1-2.12,0L.75,6.22a1.467,1.467,0,0,1,0-2.56L2.72,2.6l1.57-.85L7.04.27a2.216,2.216,0,0,1,2.12,0l6.29,3.39A1.452,1.452,0,0,1,16.2,4.94Z" transform="translate(559.9 190)" fill="#292d32" opacity="0.4"/>
+                <path id="Vector-3" data-name="Vector" d="M7.93,3.085,2.08.155a1.427,1.427,0,0,0-1.4.06A1.413,1.413,0,0,0,0,1.435v5.53a2.5,2.5,0,0,0,1.39,2.25l5.85,2.92a1.432,1.432,0,0,0,.64.15,1.365,1.365,0,0,0,.75-.22,1.413,1.413,0,0,0,.68-1.22V5.315A2.463,2.463,0,0,0,7.93,3.085Z" transform="translate(557.97 197.705)" fill="#292d32" opacity="0.4"/>
+                <path id="Vector-4" data-name="Vector" d="M9.32,1.439v5.53a2.494,2.494,0,0,1-1.39,2.24l-5.85,2.93A1.443,1.443,0,0,1,0,10.849V5.329a2.5,2.5,0,0,1,1.39-2.25l2.15-1.07,1.5-.75,2.2-1.1a1.4,1.4,0,0,1,1.4.06A1.435,1.435,0,0,1,9.32,1.439Z" transform="translate(568.71 197.711)" fill="#292d32" opacity="0.4"/>
+                <path id="Vector-5" data-name="Vector" d="M10.99,5.41,9.51,6.2,0,.85,1.57,0l9.18,5.18A.755.755,0,0,1,10.99,5.41Z" transform="translate(562.62 191.75)" fill="#292d32"/>
+                <path id="Vector-6" data-name="Vector" d="M1.5,0V2.27a.755.755,0,0,1-.75.75A.755.755,0,0,1,0,2.27V.75Z" transform="translate(572.25 198.97)" fill="#292d32"/>
+              </g>
+            </g>
+          </svg>
+            </i
+        ><span *ngIf="side_triger">Reports</span></a
+      >
+    </li>
+   
     
-</div>
+    
+  </ul>
+ 
+</nav>
