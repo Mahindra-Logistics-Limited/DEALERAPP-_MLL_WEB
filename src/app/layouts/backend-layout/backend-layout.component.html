@@ -6,14 +6,15 @@
 
 <div [class]="{'men-cont-wrap': view_head, 'bg-300': view_head}"  >
     <app-backend-header *ngIf="view_head">
-
+        
 
     </app-backend-header>
-
-    <router-outlet></router-outlet>
-
+<div  fxLayout="column" fxLayoutAlign="start"  >
+    <router-outlet ></router-outlet>
+    <!-- <app-notification *ngIf="view_head" fxFlex="30" ></app-notification> -->
+</div>
 <!-- <app-backend-footer *ngIf="view_head"></app-backend-footer> -->
-<app-notification *ngIf="view_head"></app-notification>
+
 </div>
 
 

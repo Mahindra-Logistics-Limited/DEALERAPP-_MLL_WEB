@@ -242,6 +242,14 @@
                                 min-width: 72px;
                                 @include displaydiv(inherit);
                             }
+                            &.path_bg
+                            {
+                                background-color: #F5C050;
+                                border: 1px solid #E29C00;
+                                color: #D89F28;
+                                text-align: center;
+                                @include padding(7px,7px,7px,7px);
+                            }
                         }
                     }
                     .vin_icon
