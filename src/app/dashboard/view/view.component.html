@@ -1,0 +1,123 @@
+<div class="dashboard_wrop">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row">
+            <div class="text-50 discrip_wrip">
+                <div class="discrip_titl">Home </div>
+                <div class="duscript_sub">Dashboard
+                    <!-- <span>ORDER PROCESS</span> -->
+                </div>
+            </div>
+            <div class="cust_input_toggle_group" style="margin-left: 10px;">
+                <mat-button-toggle-group #group="matButtonToggleGroup" [value]="selectedVal"
+                    (change)="onValChange(group.value)">
+                    <mat-button-toggle value="option1">
+                      Consignment/ Order Status
+                    </mat-button-toggle>
+                    <mat-button-toggle value="option2">
+                      My Consignment/ Order History 
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+  
+        </div>
+  
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <div>
+  
+            </div>
+            <div class="cust_input_datepick">
+                <mat-form-field appearance="fill">
+                    <mat-label>Start date - End date</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate placeholder="Start date">
+                        <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>       -->
+                    <mat-datepicker-toggle [disableRipple]="true" matSuffix [for]="picker">
+                        <div matDatepickerToggleIcon><img src="../../../assets/images/calendar_icon.png" width="20px">
+                        </div>
+                    </mat-datepicker-toggle>
+  
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+  
+           
+  
+        </div>
+    </div>
+    <div class="asp_view_data" fxLayout="column" fxLayoutAlign="space-between top">
+       
+ 
+      <div fxLayout="row wrap"  fxflexfill class="view_cards_warp">
+            <div fxLayout="row" fxLayoutAlign=" stretch" class="view_cards_box view_cards_box_planer view_Box_full">
+                <div class="cards_in_worp">
+                  <div fxLayout="row" class="card_con_wrp card_dec_sec">
+                    <div fxLayout="row" fxFlex="100" class="card_item">
+                        <section>upper  deck</section>
+                        </div>
+                        </div>
+                    <div fxLayout="row"  fxLayoutAlign="space-between" class="card_con_wrp ">
+                        <div fxLayout="row"  class="card_item">
+                            <!-- <div class="card_icon"><img src="../../../assets/images/vin1.png"></div> -->
+                            <div class="card_text">
+                                <p>VIN No. </p>
+                                <h3 class="upper_cs">M2M13661</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="end center"   class="card_item">
+                           
+                            <div class="card_text">
+                                <b class="upper_cs min_with path_bg">PATNA</b>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between" class="card_con_wrp">
+                        <div fxLayout="row"  class="card_item">
+                            
+                            <div class="card_text">
+                                <p>Source </p>
+                                <h3>Chakan</h3>
+                            </div>
+                        </div>
+                        <div fxLayout="row"  class="card_item">
+                           
+                            <div class="card_text">
+                                <p>Destination</p>
+                                <h3>Wagholi</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div fxLayout="row" class="card_con_wrp">
+                        <div fxLayout="row" fxFlex="100" class="card_item">
+                            <div class="vin_icon">
+                                <img src="../../../assets/images/vihical.JPG">
+                            </div>
+                        </div>
+                    </div>
+                  
+                   
+                    
+                    
+                    
+                   
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="card_footer" style="margin-top: -10px;
+                    background-color: #fff;
+                    padding: 5px;">
+                      
+                    </div>
+                </div>
+             </div>
+           
+            
+            
+        </div>
+        
+  
+       
+  
+        
+    </div>
+   
+  </div>

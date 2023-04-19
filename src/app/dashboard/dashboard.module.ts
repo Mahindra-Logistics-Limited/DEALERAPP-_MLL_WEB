@@ -14,6 +14,7 @@ import { CreatesapComponent } from './createsap/createsap.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { SAPmasterComponent } from './sapmaster/sapmaster.component';
 import { PlannerComponent } from './planner/planner.component';
+import { ViewComponent } from './view/view.component';
 
 
 
@@ -23,7 +24,8 @@ import { PlannerComponent } from './planner/planner.component';
     DashboardComponent,
     CreatesapComponent,
     SAPmasterComponent,
-    PlannerComponent
+    PlannerComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,
